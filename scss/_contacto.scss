@@ -1,0 +1,80 @@
+
+@mixin input-textarea($padding, $font-size, $border-radius) {
+    width: 100%;
+    padding: $padding;
+    margin-top: 5px;
+    font-size: $font-size;
+    border: none;
+    border-radius: $border-radius;
+}
+
+@mixin button-styles($bg-color, $text-color, $padding, $border-radius, $font-size) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $padding;
+    border: none;
+    border-radius: $border-radius;
+    font-size: $font-size;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken($bg-color, 10%);
+    }
+}
+
+@mixin container-styles($max-width, $padding, $border-radius) {
+    background-color: rgba(20, 20, 20, 0.445);
+    padding: $padding;
+    border-radius: $border-radius;
+    max-width: $max-width;
+    width: 100%;
+}
+
+.contacto-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.781)), url("../img/contacto.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .superponer {
+        @include container-styles(600px, 40px, 10px);
+
+        .contacto-form-container {
+            text-align: center;
+
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin-bottom: 30px;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .input-container {
+                margin-bottom: 15px;
+            }
+
+            input,
+            textarea {
+                @include input-textarea(10px, 16px, 5px);
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+
+            button {
+                @include button-styles($primary-color, $text-color, 12px 25px, 5px, 16px);
+            }
+        }
+    }
+}

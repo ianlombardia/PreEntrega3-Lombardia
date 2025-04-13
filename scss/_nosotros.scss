@@ -1,0 +1,110 @@
+
+@mixin tipografía($font-size, $font-weight, $font-style: normal) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-style: $font-style;
+}
+
+// paginanosotros
+.contenedor-trayectoria {
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .container1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .parrafo-trayectoria {
+            @include tipografía(20px, 600);
+        }
+
+        .titulo-trayectoria {
+            text-align: center;
+            @include tipografía(100px, 700);
+        }
+
+        .colborde {
+            border-left: solid 2px white;
+            border-right: solid 2px white;
+        }
+    }
+
+    .container-nosotros {
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .col {
+                margin: 50px;
+                align-items: center;
+                justify-content: center;
+
+                .titulo-nosotros {
+                    @include tipografía(50px, 600);
+                    margin-bottom: 50px;
+                }
+
+                .parrafo-nosotros {
+                    @include tipografía(20px, 200);
+                }
+
+                img {
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1400px) {
+    .contenedor-trayectoria {
+        .container-nosotros {
+            .center {
+                display: contents;
+                flex-direction: column;
+
+                .col {
+                    margin: 0px;
+                    padding: 10px;
+
+                    .cl-img {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:858px) {
+    .contenedor-trayectoria {
+        .container1 {
+            flex-direction: column;
+
+            .colborde {
+                border-top: solid 2px white;
+                border-bottom: solid 2px white;
+                border-left: none;
+                border-right: none;
+            }
+        }
+    }
+}
+
+@media (max-width:650px) {
+    .container-nosotros {
+        .center {
+            .col {
+                .cl-img {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+main{
+    
+
+    .section-proyectos{
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        
+
+        .carousel{
+            width: 60%;
+            border-radius:10px;
+            box-shadow: 10px 10px 10px 0 rgba(255, 255, 255, 0.26);
+            .carousel-inner{
+                border-radius: 10px;
+            }
+        }
+
+
+    }
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+    main{
+        .section-proyectos{
+            .carousel{
+                width: 100%;
+            }
+        }
+    }
+
+}
+
